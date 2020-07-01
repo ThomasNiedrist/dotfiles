@@ -10,6 +10,8 @@ export ZSH="/home/thomas/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="minimal_custom"
 
+
+export TERM=xterm-256color
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -100,4 +102,4 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-export EXA_COLORS="fi=35:di=33:*.c*=36;40ln=30;31"
+export EXA_COLORS=".*=30;42;01:fi=35:di=33:*.c*=36;40ln=30;31"

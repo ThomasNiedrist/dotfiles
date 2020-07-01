@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/thomas'
+let g:netrw_dirhist_2='/home/thomas/.config/zathura'
+let g:netrw_dirhist_3='/home/thomas/Fachhochschule_Hagenberg/hsd_semester2/sen2/Uebung10/Beispiel1'
+let g:netrw_dirhist_4='/home/thomas/.vim/plugged/goyo.vim'
+let g:netrw_dirhist_5='/home/thomas/.vim/plugged/goyo.vim/plugin'
+let g:netrw_dirhist_6='/home/thomas/.vim/plugged/goyo.vim'
+let g:netrw_dirhist_7='/home/thomas/.vim/plugged/goyo.vim/autoload'
