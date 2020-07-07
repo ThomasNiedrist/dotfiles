@@ -1,8 +1,10 @@
-color vim-framer-syntax
+"color vim-framer-syntax
 syntax on
 set number
 set tabstop=4
 set relativenumber
+set incsearch
+set hlsearch
 
 autocmd VimEnter * echo '>^.^<'
 " move by one line
@@ -10,6 +12,8 @@ nnoremap j gj
 nnoremap k gk
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight CursorLineNR term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=NONE
+
 call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -22,6 +26,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 imap <special><F8> <Esc> :w<CR>
@@ -95,9 +100,19 @@ set colorcolumn=80
 
 
 " Nerdtree
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 
 "Ultisnips
 let g:UltiSnipsExpandTrigger="<F2>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"color
+"autocmd vimenter * colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
+set background=dark
+let g:gruvbox_invert_selection=0
+let g:gruvbox_italicize_strings=1
+"colorscheme gruvbox
+autocmd BufEnter * colorscheme gruvbox
+autocmd BufEnter *.tex colorscheme vim-framer-syntax 
