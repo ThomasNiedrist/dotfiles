@@ -1,12 +1,12 @@
-configDir= $HOME/config/.cfg
-configDirBak=$HOME/.config_backup
+HomeDir=/home/thomas
+mkdir -p $HomeDir/config
+configDirBak=$HomeDir/.config_backup
 
 pacman -S git vim xorg-xinit xorg-server xorg-xset
-mkdir config
-git clone --bare https://gitlab.com/Thomas_Niedrist/dotfiles.git $configDir
+git clone --bare https://gitlab.com/Thomas_Niedrist/dotfiles.git $HomeDir/config/.cfg
 
 function config {
-	/usr/bin/git --git-dir=$configDir --work-tree=$HOME $@
+	/usr/bin/git --git-dir=$HomeDir/config/.cfg --work-tree=$HOME $@
 }
 
 mkdir -p $configDirBak
@@ -19,3 +19,4 @@ else
 fi;
 
 config config status.showUntrackedFiles no
+chown -R thomas .*
