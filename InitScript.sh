@@ -1,8 +1,8 @@
 configDir= $HOME/config/.cfg
 configDirBak=$HOME/.config_backup
 
-pacman -S git vim xorg-init xorg-server xorg-xset
-
+pacman -S git vim xorg-xinit xorg-server xorg-xset
+mkdir config
 git clone --bare https://gitlab.com/Thomas_Niedrist/dotfiles.git $configDir
 
 function config {
@@ -11,7 +11,7 @@ function config {
 
 mkdir -p $configDirBak
 config checkout 
-if[$? = 0]; then
+if [ $? = 0 ]; then
 		echo "Config Ckecked Out!";
 else
 		echo "Backing up Files.";
