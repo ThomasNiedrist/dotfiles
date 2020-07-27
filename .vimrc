@@ -6,12 +6,11 @@ set relativenumber
 set incsearch
 set hlsearch
 
-autocmd VimEnter * echo '>^.^<'
 " move by one line
 nnoremap j gj
 nnoremap k gk
 
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 highlight CursorLineNR term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=NONE
 
 
@@ -35,6 +34,7 @@ Plug 'preservim/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
+Plug 'skammer/vim-css-color'
 call plug#end()
 
 imap <special><F8> <Esc> :w<CR>
@@ -88,22 +88,14 @@ let g:gitgutter_sign_modified_removed = 'ww'
 autocmd VimEnter * :GitGutterEnable
 
 "Goyo
-
-augroup LeaveGoyo
-	autocmd User GoyoLeave Limelight! 
-	autocmd User GoyoLeave :source ~/.vimrc
-augroup END
-
-autocmd! User GoyoEnter Limelight
-"autocmd! User GoyoLeave Limelight! :source ~/.vimrc
 nnoremap <special><F12> :Goyo <CR>
 
 "limelight
-let g:limelight_conceal_ctermfg = 236
-let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_ctermfg = 11
+let g:limelight_conceal_guifg = 'Yellow'
 
 "Linewidth
-highlight ColorColumn ctermbg=238
+highlight ColorColumn ctermbg=7
 set colorcolumn=80
 
 
@@ -117,10 +109,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "color
 "autocmd vimenter * colorscheme gruvbox
-let g:gruvbox_contrast_dark='hard'
-set background=dark
-let g:gruvbox_invert_selection=0
-let g:gruvbox_italicize_strings=1
+"let g:gruvbox_contrast_dark='hard'
+"set background=dark
+"let g:gruvbox_invert_selection=0
+"let g:gruvbox_italicize_strings=1
 "colorscheme gruvbox
-autocmd BufEnter * colorscheme gruvbox
+"autocmd BufEnter * colorscheme gruvbox
 autocmd BufEnter *.tex colorscheme vim-framer-syntax 
+
+set t_Co=256		"enable 256 colors
