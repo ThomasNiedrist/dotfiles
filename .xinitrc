@@ -7,7 +7,7 @@
 # invoke global X session script
 setxkbmap de
 xset r rate 300 50
-xrdb --merge ~/.Xresources
+xrdb ~/.Xresources
 exec dwm
 exec picom -b
 exec feh --bg-scale /home/thomas/.config/Wallpaper.jpg
