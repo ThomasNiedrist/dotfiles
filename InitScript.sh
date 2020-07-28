@@ -1,7 +1,7 @@
 HomeDir=/home/thomas
 configDirBak=$HomeDir/.config_backup
 
-rm -rf st
+rm -rf st dmenu
 rm -rf $HomeDir/.config/.cfg
 rm -rf $configDirBak
 
@@ -26,6 +26,11 @@ cd $HomeDir
 
 git clone https://gitlab.com/Thomas_Niedrist/st.git
 cd st
+make clean install
+cd ..
+
+git clone https://gitlab.com/Thomas_Niedrist/dmenu.git
+cd dmenu
 make clean install
 cd ..
 
