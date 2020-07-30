@@ -5,7 +5,7 @@
 # global xinitrc file, used by all X sessions started by xinit (startx)
 
 # invoke global X session script
-setxkbmap de
+setxkbmap de -option caps:swapescape
 xset r rate 300 50
 xrdb ~/.Xresources
 exec dwm

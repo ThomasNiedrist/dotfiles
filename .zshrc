@@ -111,3 +111,5 @@ eval "$(dircolors)"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow"
 
+
+bindkey -v
