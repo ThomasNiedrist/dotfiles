@@ -39,7 +39,7 @@ cd dwm
 make clean install
 cd ..
 
-ls -a | grep -Ev ".config_backup|Initscript.sh" |xargs -t -I '{}' mv {} $configDirBak
+ls -a | grep -Ev ".ssh|.config_backup|Initscript.sh" |xargs -t -I '{}' mv {} $configDirBak
 
 git clone --bare https://gitlab.com/Thomas_Niedrist/dotfiles.git $HomeDir/.config/.cfg
 
