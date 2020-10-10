@@ -1,3 +1,4 @@
+#!/bin/bash
 HomeDir=/home/thomas
 configDirBak=$HomeDir/.config_backup
 
