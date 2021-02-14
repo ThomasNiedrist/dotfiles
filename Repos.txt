@@ -1,0 +1,3 @@
+https://gitlab.com/Thomas_Niedrist/st
+https://gitlab.com/Thomas_Niedrist/dwm
+https://gitlab.com/Thomas_Niedrist/dmenu

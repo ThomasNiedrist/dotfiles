@@ -1,0 +1,15 @@
+make
+git
+vim
+xorg-xinit
+xorg-server
+xorg-set
+picom
+ttf-linux-libertine
+ttf-dejavu
+ttf-inconsolata
+openssh
+libxcb
+Xlib-libxcb
+xcb-res
+

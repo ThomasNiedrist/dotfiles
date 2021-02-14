@@ -1,6 +1,7 @@
 HomeDir=/home/thomas
 configDirBak=$HomeDir/.config_backup
-
+RepoFileName="Repos.txt"
+PackageFileName="Packages.txt"
 rm -rf st dmenu dwm
 rm -rf $HomeDir/.config/.cfg
 rm -rf $configDirBak
@@ -13,8 +14,7 @@ if [ -f "$HomeDir/.config" ]; then
 fi
 mkdir -p $HomeDir/.config/
 
-yes j | pacman -S make git vim xorg-xinit xorg-server xorg-xset ttf-linux-libertine \
-ttf-dejavu picom ttf-inconsolata
+pacman -S --needed $(comm -12 <(pacman -Slq|sort) < (sort $PackagesFileName))
 
 cd /opt
 rm -rf yay-git
@@ -24,20 +24,19 @@ cd yay-git
 sudo -u nobody makepkg -si
 cd $HomeDir
 
-git clone https://gitlab.com/Thomas_Niedrist/st.git
-cd st
-make clean install
-cd ..
+yay -S shell-color-scripts
 
-git clone https://gitlab.com/Thomas_Niedrist/dmenu.git
-cd dmenu
-make clean install
-cd ..
+while IFS= read -r line
+do 
+		FolderName="$(echo "$line" | sed 's:.*/\(\w*$\):\1:g')"
+		rm -rf  $FolderName
+		git clone "$line"
+		cd $FolderName
+		make clean install
+		cd ..
+done < "$ReposFileName"	
 
-git clone https://gitlab.com/Thomas_Niedrist/dwm.git
-cd dwm
-make clean install
-cd ..
+
 
 ls -a | grep -Ev ".ssh|.config_backup|Initscript.sh" |xargs -t -I '{}' mv {} $configDirBak
 
