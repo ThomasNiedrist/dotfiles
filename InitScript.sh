@@ -15,7 +15,7 @@ if [ -f "$HomeDir/.config" ]; then
 fi
 mkdir -p $HomeDir/.config/
 
-pacman -S --needed "$(sort $PackageFileName)"
+pacman -S --needed - < $PackageFileName
 
 cd /opt ||exit
 rm -rf yay-git
