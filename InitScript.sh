@@ -18,7 +18,7 @@ if [ -f "$HomeDir/.config" ]; then
 fi
 mkdir -p $HomeDir/.config/
 
-pacman -S --needed - < $PackageFileName
+pacman -S  --noconfirm - < $PackageFileName
 
 #cd /opt ||exit
 rm -rf yay-git
