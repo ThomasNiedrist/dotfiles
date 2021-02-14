@@ -10,3 +10,4 @@ ttf-inconsolata
 openssh
 libx11
 libxinerama
+libxft

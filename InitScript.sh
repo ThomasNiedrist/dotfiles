@@ -47,7 +47,7 @@ ls -a | grep -Ev ".ssh|.config_backup|Initscript.sh" |xargs -t -I '{}' mv {} $co
 git clone --bare https://gitlab.com/Thomas_Niedrist/dotfiles.git $HomeDir/.config/.cfg
 
 function config {
-	/usr/bin/git --git-dir=$HomeDir/.config/.cfg --work-tree=$HomeDir "$@""
+	/usr/bin/git --git-dir=$HomeDir/.config/.cfg --work-tree=$HomeDir "$@"
 }
 
 config checkout 
