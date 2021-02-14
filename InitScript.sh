@@ -1,8 +1,11 @@
 #!/bin/bash
+useradd -m -g wheel thomas
 HomeDir=/home/thomas
 configDirBak=$HomeDir/.config_backup
 RepoFileName="Repos.txt"
 PackageFileName="Packages.txt"
+cp $RepoFileName $HomeDir
+cp $PackageFileName $HomeDir
 rm -rf st dmenu dwm
 rm -rf $HomeDir/.config/.cfg
 rm -rf $configDirBak
