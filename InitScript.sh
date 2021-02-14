@@ -1,5 +1,5 @@
 #!/bin/bash
-useradd -m -g wheel thomas
+#useradd -m -g wheel thomas
 HomeDir=/home/thomas
 configDirBak=$HomeDir/.config_backup
 RepoFileName="Repos.txt"
@@ -20,12 +20,12 @@ mkdir -p $HomeDir/.config/
 
 pacman -S --needed - < $PackageFileName
 
-cd /opt ||exit
+#cd /opt ||exit
 rm -rf yay-git
-git clone https://aur.archlinux.org/yay-git.git
-chown -R thomas:thomas ./yay-git
-cd yay-git ||exit
-sudo -u nobody makepkg -si
+git clone https://aur.archlinux.org/yay.git
+chown -R thomas ./yay
+cd yay ||exit
+makepkg -si
 cd $HomeDir || exit
 
 yay -S shell-color-scripts
