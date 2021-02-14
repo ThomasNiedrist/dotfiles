@@ -25,7 +25,7 @@ rm -rf yay-git
 git clone https://aur.archlinux.org/yay.git
 chown -R thomas ./yay
 cd yay ||exit
-makepkg -si
+sudo -u nobody makepkg -si
 cd $HomeDir || exit
 
 yay -S shell-color-scripts

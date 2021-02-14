@@ -9,7 +9,8 @@ ttf-linux-libertine
 ttf-dejavu
 ttf-inconsolata
 openssh
+libx11
+libxinerama
 libxcb
-Xlib-libxcb
 xcb-res
 
