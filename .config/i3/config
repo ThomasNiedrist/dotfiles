@@ -201,7 +201,7 @@ bar {
 		}
 }
 
-exec_always feh --bg-scale /home/thomas/Bilder/wallpaper.jpg
+exec_always feh --bg-scale /home/thomas/.config/Wallpaper.jpg
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bindsym F1 exec firefox
