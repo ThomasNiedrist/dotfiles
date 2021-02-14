@@ -1,3 +1,4 @@
+#!/bin/bash
 HomeDir=/home/thomas
 configDirBak=$HomeDir/.config_backup
 RepoFileName="Repos.txt"
@@ -14,15 +15,15 @@ if [ -f "$HomeDir/.config" ]; then
 fi
 mkdir -p $HomeDir/.config/
 
-pacman -S --needed $(comm -12 <(pacman -Slq|sort) < (sort $PackagesFileName))
+pacman -S --needed "$(sort $PackageFileName)"
 
-cd /opt
+cd /opt ||exit
 rm -rf yay-git
 git clone https://aur.archlinux.org/yay-git.git
 chown -R thomas:thomas ./yay-git
-cd yay-git
+cd yay-git ||exit
 sudo -u nobody makepkg -si
-cd $HomeDir
+cd $HomeDir || exit
 
 yay -S shell-color-scripts
 
@@ -31,10 +32,10 @@ do
 		FolderName="$(echo "$line" | sed 's:.*/\(\w*$\):\1:g')"
 		rm -rf  $FolderName
 		git clone "$line"
-		cd $FolderName
+		cd $FolderName || exit
 		make clean install
 		cd ..
-done < "$ReposFileName"	
+done < "$RepoFileName"	
 
 
 
@@ -43,7 +44,7 @@ ls -a | grep -Ev ".ssh|.config_backup|Initscript.sh" |xargs -t -I '{}' mv {} $co
 git clone --bare https://gitlab.com/Thomas_Niedrist/dotfiles.git $HomeDir/.config/.cfg
 
 function config {
-	/usr/bin/git --git-dir=$HomeDir/.config/.cfg --work-tree=$HomeDir $@
+	/usr/bin/git --git-dir=$HomeDir/.config/.cfg --work-tree=$HomeDir "$@""
 }
 
 config checkout 
