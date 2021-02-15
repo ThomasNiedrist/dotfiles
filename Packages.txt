@@ -11,3 +11,6 @@ openssh
 libx11
 libxinerama
 libxft
+terminus-font
+zsh
+zathura

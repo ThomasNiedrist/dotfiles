@@ -40,7 +40,8 @@
 *.alpha:	0.9
 
 
-*.font: 		Inconsolata: pixelsize=14:antialias=true:autohint=true	
+!*.font: 		Inconsolata: pixelsize=14:antialias=true:autohint=true	
+*.font:			terminus: pixelsize=15:antialias=true:autohint=true
 *.shell:		/usr/bin/zsh
 
 *.selbackground: #cc7122

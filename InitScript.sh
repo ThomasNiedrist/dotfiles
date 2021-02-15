@@ -29,6 +29,7 @@ sudo -u nobody makepkg -si
 cd $HomeDir || exit
 
 yay -S shell-color-scripts
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 while IFS= read -r line
 do 
@@ -55,3 +56,4 @@ config checkout
 config config status.showUntrackedFiles no
 chown -R thomas .*
 vim -e -s -c "PlugInstall" -c q
+
